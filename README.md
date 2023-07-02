@@ -8,7 +8,7 @@ RLS (Row Level Security) policies are evaluated for every row in a query, so if 
 
 The problem with this approach is that 1. it's pretty restricting (limited to storing the claims in a specific field in a specific table in a hidden schema), 2. claims are only read when a user logs in, so those claims can become stale if they're changed before a user logs out and then back in, 3. claims can be cumbersome to create and update.
 
-Using `db_pre_request` solves those issues by letting you store claims data anywhere you like.  Since the `db_pre_request` function is run once for every request, claims are always current.  Modifying the way claims are created and updated is also fairly easy and very flexible.
+Using `db_pre_request` solves those issues by letting you store claims data anywhere you like.  Since the `db_pre_request` function is run once for every request, claims are always current.  Creating and modifying claims is also fairly easy and very flexible.  The one drawback is that the `db_pre_request` function does need to run one time for every `http request` so it's important to keep that function as efficient as possible.  This function can be optimized, though, through features such as conditional processing.
 
 ## Features
 - Access the JWT token
