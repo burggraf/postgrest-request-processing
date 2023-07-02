@@ -1,6 +1,15 @@
 # PRP: PostgREST Request Processing
 *Leveraging `db_pre_request` and `request headers` to: create custom claims, generate advanced, up-to-date, scalable RLS policies, implement allow and deny lists, rate limiting, and much more.*
 
+## Overview
+**PostgREST** provides a setting called `db_pre_request` that accepts the name of a **PostgreSQL** function.  This function is executed at the beginning of each `http request` and can set up data (in memory) for the rest of the request.  Why is this so powerful and so important?
+
+RLS (Row Level Security) policies are evaluated for every row in a query, so if you're retrieving 1000 rows the `select` policy for the table will be executed 1000 times.  To make things scalable, it's advised that you store "custom claims", which are stored in `auth.users.raw_app_metadata` database field and sent as part of the JWT token with each request.  This puts those claims into memory, making them fast to access (and much more scalable than doing 1000 individual database lookups.)
+
+The problem with this approach is that 1. it's pretty restricting (limited to storing the claims in a specific field in a specific table in a hidden schema), 2. claims are only read when a user logs in, so those claims can become stale if they're changed before a user logs out and then back in, 3. claims can be cumbersome to create and update.
+
+Using `db_pre_request` solves those issues by letting you store claims data anywhere you like.  Since the `db_pre_request` function is run once for every request, claims are always current.  Modifying the way claims are created and updated is also fairly easy and very flexible.
+
 ## Features
 - Access the JWT token
   - user info: id, email, phone, database role, metadata
