@@ -29,5 +29,19 @@ Using `db_pre_request` solves those issues by letting you store claims data anyw
   - Use the claims in RLS (Row Level Security) policies
   - Claims are always current because they're created on each request
   - Claims are only processed once per request so they're efficient in RLS policies
-   
+
+
+## Samples
+
+### Restricting access to your application with RBAC or ABAC
+
+### Multi-tenancy application
+
+### Allow-listing by IP Address
+
+### Rate Limiting
+
+### Gathering basic usage data: country, platform, user-agent
+
+
 
