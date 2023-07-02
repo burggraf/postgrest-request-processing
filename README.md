@@ -10,6 +10,8 @@ The problem with this approach is that 1. it's pretty restricting (limited to st
 
 Using `db_pre_request` solves those issues by letting you store claims data anywhere you like.  Since the `db_pre_request` function is run once for every request, claims are always current.  Creating and modifying claims is also fairly easy and very flexible.  The one drawback is that the `db_pre_request` function does need to run one time for every `http request` so it's important to keep that function as efficient as possible.  This function can be optimized, though, through features such as conditional processing.
 
+This method is also more secure than standard claims because no claims are ever exposed to the user. 
+
 ## Features
 - Access the JWT token
   - user info: id, email, phone, database role, metadata
