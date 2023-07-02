@@ -1,5 +1,5 @@
 # PRP: PostgREST Request Processing
-*Leveraging `db_pre_request` and `request headers` to create custom claims, advanced, scalable RLS policies, and much more.*
+*Leveraging `db_pre_request` and `request headers` to: create custom claims, generate advanced, up-to-date, scalable RLS policies, implement allow and deny lists, rate limiting, and much more.*
 
 ## Features
 - Access the JWT token
