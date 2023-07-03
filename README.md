@@ -45,5 +45,8 @@ This method is also more secure than standard claims because no claims are ever 
 
 ### Gathering basic usage data: country, platform, user-agent
 
+### Conditionally setting claims
+#### using custom headers
+#### based on the current user
 
 
