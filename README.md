@@ -63,9 +63,9 @@ sample: `req()->>'claim_name'`
   ],
   "aud": "authenticated",
   "exp": 1688443242,
-  "sub": "bdea7a6b-9236-4e85-b4a9-bd908c534f91",
+  "sub": "<uuid>",
   "role": "authenticated",
-  "email": "markb@dmarie.com",
+  "email": "<email>",
   "phone": "",
   "headers": {
     "host": "localhost:3000",
