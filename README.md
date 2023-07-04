@@ -49,4 +49,73 @@ This method is also more secure than standard claims because no claims are ever 
 #### using custom headers
 #### based on the current user
 
+## Reference
+sample: `req()->>'claim_name'`
+
+```json
+  "aal": "aal1",
+  "amr": [
+    {
+      "method": "password",
+      "timestamp": 9999999999
+    }
+  ],
+  "aud": "authenticated",
+  "exp": 1688443242,
+  "sub": "bdea7a6b-9236-4e85-b4a9-bd908c534f91",
+  "role": "authenticated",
+  "email": "markb@dmarie.com",
+  "phone": "",
+  "headers": {
+    "host": "localhost:3000",
+    "accept": "*/*",
+    "cf-ray": "7e142884b62696d7-SJC",
+    "origin": "http://127.0.0.1:5173",
+    "referer": "http://127.0.0.1:5173/",
+    "cdn-loop": "cloudflare; subreqs=1",
+    "priority": "u=1, i",
+    "cf-ew-via": "15",
+    "cf-worker": "supabase.co",
+    "sec-ch-ua": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\"",
+    "x-real-ip": "111.111.111.111",
+    "cf-visitor": "{\"scheme\":\"https\"}",
+    "connection": "keep-alive",
+    "user-agent": "<user_agent>",
+    "cf-ipcountry": "US",
+    "content-type": "application/json",
+    "authorization": "Bearer <token>",
+    "x-client-info": "supabase-js/2.26.0",
+    "x-consumer-id": "<id>",
+    "content-length": "2",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "cross-site",
+    "accept-encoding": "gzip",
+    "accept-language": "en-US,en;q=0.9",
+    "content-profile": "public",
+    "x-forwarded-for": "111.111.111.111, 222.222.222.222",
+    "cf-connecting-ip": "111.111.111.111",
+    "sec-ch-ua-mobile": "?0",
+    "x-forwarded-host": "<ref>.supabase.co",
+    "x-forwarded-path": "/rest/v1/rpc/req",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https",
+    "sec-ch-ua-platform": "\"<platform>\"",
+    "x-forwarded-prefix": "/rest/v1/",
+    "x-consumer-username": "anon-key",
+    "x-credential-identifier": "<uuid>"
+  },
+  "session_id": "<uuid>",
+  "app_metadata": {
+    "provider": "email",
+    "mysetting": "AAA",
+    "providers": [
+      "email"
+    ]
+  },
+  "user_metadata": {},
+}
+```
+
+
 
