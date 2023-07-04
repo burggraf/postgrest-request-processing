@@ -53,6 +53,7 @@ This method is also more secure than standard claims because no claims are ever 
 sample: `req()->>'claim_name'`
 
 ```json
+{
   "aal": "aal1",
   "amr": [
     {
