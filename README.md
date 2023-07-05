@@ -37,6 +37,8 @@ This method is also more secure than standard claims because no claims are ever 
 
 ### Restricting access to your application with RBAC or ABAC
 
+- RBAC (Role Based Access Control): [RBAC Demo](examples/rbac_demo.sql)
+
 ### Multi-tenancy application
 
 ### Allow-listing by IP Address
